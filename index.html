@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Único de Trámite - UGEL 05</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="split-container">
+        <div class="form-side">
+            <div class="container">
+                <header>
+                    <h1>Formulario Único de Trámite</h1>
+                    <p class="subtitle">UGEL 05 - San Juan de Lurigancho / El Agustino</p>
+                </header>
+
+                <div class="progress-bar">
+                    <div class="progress-step active">1</div>
+                    <div class="progress-step">2</div>
+                    <div class="progress-step">3</div>
+                    <div class="progress-step">4</div>
+                    <div class="progress-step">5</div>
+                </div>
+
+                <form id="futForm">
+                    <div class="section active">
+                        <h2>I. Resumen de su Pedido</h2>
+                        <div class="form-group">
+                            <label for="resumen">Resumen:</label>
+                            <textarea id="resumen" name="resumen" rows="4" required></textarea>
+                        </div>
+                        <div class="section-nav">
+                            <div></div>
+                            <button type="button" class="btn-nav btn-next">Siguiente</button>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>II. Dependencia o Autoridad a quien se dirige</h2>
+                        <div class="form-group">
+                            <label for="dependencia">Dependencia:</label>
+                            <input type="text" id="dependencia" name="dependencia" required>
+                        </div>
+                        <div class="section-nav">
+                            <button type="button" class="btn-nav btn-prev">Anterior</button>
+                            <button type="button" class="btn-nav btn-next">Siguiente</button>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>III. Datos del Solicitante</h2>
+                        <div class="form-group">
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="personType" value="natural" required checked>
+                                    Persona Natural
+                                </label>
+                                <label>
+                                    <input type="radio" name="personType" value="juridica">
+                                    Persona Jurídica
+                                </label>
+                            </div>
+                        </div>
+
+                        <div id="naturalPersonFields">
+                            <div class="name-grid">
+                                <div class="form-group">
+                                    <label for="apellidoPaterno">Apellido Paterno:</label>
+                                    <input type="text" id="apellidoPaterno" name="apellidoPaterno" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="apellidoMaterno">Apellido Materno:</label>
+                                    <input type="text" id="apellidoMaterno" name="apellidoMaterno" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nombres">Nombres:</label>
+                                    <input type="text" id="nombres" name="nombres" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="juridicaPersonFields" style="display: none;">
+                            <div class="form-group">
+                                <label for="razonSocial">Razón Social:</label>
+                                <input type="text" id="razonSocial" name="razonSocial">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipo de Documento:</label>
+                            <div class="radio-group">
+                                <label>
+                                    <input type="radio" name="documentType" value="dni" required checked>
+                                    DNI
+                                </label>
+                                <label>
+                                    <input type="radio" name="documentType" value="ruc">
+                                    RUC
+                                </label>
+                                <label>
+                                    <input type="radio" name="documentType" value="ce">
+                                    C.E.
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="documentNumber">Número de Documento:</label>
+                            <input type="text" id="documentNumber" name="documentNumber" required maxlength="12">
+                        </div>
+
+                        <div class="section-nav">
+                            <button type="button" class="btn-nav btn-prev">Anterior</button>
+                            <button type="button" class="btn-nav btn-next">Siguiente</button>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>IV. Dirección</h2>
+                        <div class="form-group">
+                            <label>Tipo de Vía:</label>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="radio" name="viaType" value="avenida" required>
+                                    Avenida
+                                </label>
+                                <label>
+                                    <input type="radio" name="viaType" value="jiron">
+                                    Jirón
+                                </label>
+                                <label>
+                                    <input type="radio" name="viaType" value="calle">
+                                    Calle
+                                </label>
+                                <label>
+                                    <input type="radio" name="viaType" value="pasaje">
+                                    Pasaje
+                                </label>
+                                <label>
+                                    <input type="radio" name="viaType" value="carretera">
+                                    Carretera
+                                </label>
+                                <label>
+                                    <input type="radio" name="viaType" value="prolongacion">
+                                    Prolongación
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nombreVia">Nombre de la vía:</label>
+                            <input type="text" id="nombreVia" name="nombreVia" required>
+                        </div>
+
+                        <div class="address-grid">
+                            <div class="form-group">
+                                <label for="numeroInmueble">N° de Inmueble:</label>
+                                <input type="text" id="numeroInmueble" name="numeroInmueble">
+                            </div>
+                            <div class="form-group">
+                                <label for="block">Block:</label>
+                                <input type="text" id="block" name="block">
+                            </div>
+                            <div class="form-group">
+                                <label for="interior">Interior:</label>
+                                <input type="text" id="interior" name="interior">
+                            </div>
+                            <div class="form-group">
+                                <label for="piso">Piso:</label>
+                                <input type="text" id="piso" name="piso">
+                            </div>
+                            <div class="form-group">
+                                <label for="mz">Mz:</label>
+                                <input type="text" id="mz" name="mz">
+                            </div>
+                            <div class="form-group">
+                                <label for="lote">Lote:</label>
+                                <input type="text" id="lote" name="lote">
+                            </div>
+                            <div class="form-group">
+                                <label for="km">Km:</label>
+                                <input type="text" id="km" name="km">
+                            </div>
+                            <div class="form-group">
+                                <label for="sector">Sector:</label>
+                                <input type="text" id="sector" name="sector">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipo de Zona:</label>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="radio" name="zoneType" value="urbanizacion" required>
+                                    Urbanización
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="puebloJoven">
+                                    Pueblo Joven
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="unidadVecinal">
+                                    Unidad Vecinal
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="conjuntoHabitacional">
+                                    Conjunto Habitacional
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="asentamientoHumano">
+                                    Asentamiento Humano
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="cooperativa">
+                                    Cooperativa
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="residencial">
+                                    Residencial
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="zonaIndustrial">
+                                    Zona Industrial
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="centroPoblado">
+                                    Centro Poblado
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="caserio">
+                                    Caserío
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="asociacion">
+                                    Asociación
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="grupo">
+                                    Grupo
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="fundo">
+                                    Fundo
+                                </label>
+                                <label>
+                                    <input type="radio" name="zoneType" value="otros">
+                                    Otros
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="nombreZona">Nombre de zona:</label>
+                            <input type="text" id="nombreZona" name="nombreZona" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="referencia">Referencia:</label>
+                            <input type="text" id="referencia" name="referencia" required>
+                        </div>
+
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="departamento">Departamento:</label>
+                                <input type="text" id="departamento" name="departamento" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="provincia">Provincia:</label>
+                                <input type="text" id="provincia" name="provincia" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="distrito">Distrito:</label>
+                                <input type="text" id="distrito" name="distrito" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfonos:</label>
+                            <input type="tel" id="telefono" name="telefono" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico para notificaciones:</label>
+                            <input type="email" id="correo" name="correo" required>
+                        </div>
+
+                        <div class="section-nav">
+                            <button type="button" class="btn-nav btn-prev">Anterior</button>
+                            <button type="button" class="btn-nav btn-next">Siguiente</button>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <h2>V. Fundamentación del Pedido</h2>
+                        <div class="form-group">
+                            <textarea id="fundamentacion" name="fundamentacion" rows="6" required></textarea>
+                        </div>
+
+                        <h2>VI. Documentos que se Adjuntan</h2>
+                        <div class="documents-list" id="documentsList">
+                            <div class="document-item">
+                                <input type="text" placeholder="Nombre del documento" class="doc-name">
+                                <button type="button" class="add-doc">+</button>
+                            </div>
+                        </div>
+
+                        <div class="declaration">
+                            <p>DECLARO que los datos presentados en el presente formulario los realizo con carácter de DECLARACIÓN JURADA</p>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Enviar Formulario</button>
+                            <button type="button" class="btn-secondary" id="btnImprimir">Imprimir</button>
+                        </div>
+
+                        <div class="section-nav">
+                            <button type="button" class="btn-nav btn-prev">Anterior</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="preview-side">
+            <div class="preview-content" id="previewContent">
+                <div class="preview-header">
+                    <h2>Vista Previa del Formulario</h2>
+                </div>
+                <div class="preview-section">
+                    <h3>I. Resumen del Pedido</h3>
+                    <div id="previewResumen"></div>
+                </div>
+                <div class="preview-section">
+                    <h3>II. Dependencia</h3>
+                    <div id="previewDependencia"></div>
+                </div>
+                <div class="preview-section">
+                    <h3>III. Datos del Solicitante</h3>
+                    <div id="previewPersonalData"></div>
+                </div>
+                <div class="preview-section">
+                    <h3>IV. Dirección</h3>
+                    <div id="previewAddress"></div>
+                </div>
+                <div class="preview-section">
+                    <h3>V. Fundamentación del Pedido</h3>
+                    <div id="previewFundamentacion"></div>
+                </div>
+                <div class="preview-section">
+                    <h3>VI. Documentos Adjuntos</h3>
+                    <div id="previewDocuments"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
